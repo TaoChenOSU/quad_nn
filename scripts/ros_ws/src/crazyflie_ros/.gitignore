@@ -1,0 +1,5 @@
+*.pyc
+*/CMakeFiles/*
+*/catkin_generated/*
+*.cmake
+*/Makefile

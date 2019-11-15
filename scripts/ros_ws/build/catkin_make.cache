@@ -1,0 +1,2 @@
+crazyflie_ros/crazyflie:crazyflie_ros/crazyflie_controller:crazyflie_ros/crazyflie_cpp:crazyflie_ros/crazyflie_demo:crazyflie_ros/crazyflie_description:crazyflie_ros/crazyflie_driver:crazyflie_ros/crazyflie_tools:crazyswarm:externalDependencies/libmotioncapture:externalDependencies/libobjecttracker
+-DCATKIN_DEVEL_PREFIX=/home/artem/crazyswarm-nn/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/artem/crazyswarm-nn/ros_ws/install -G Unix Makefiles

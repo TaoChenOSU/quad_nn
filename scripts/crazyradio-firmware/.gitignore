@@ -1,0 +1,5 @@
+*~
+firmware/bin/*
+*.pyc
+*.o
+nrfProg/nrfProg

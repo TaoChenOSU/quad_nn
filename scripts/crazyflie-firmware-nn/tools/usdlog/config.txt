@@ -1,0 +1,17 @@
+500
+50
+log
+1
+1
+acc.x
+acc.y
+acc.z
+gyro.x
+gyro.y
+gyro.z
+stateEstimate.x
+stateEstimate.y
+stateEstimate.z
+stateEstimate.vx
+stateEstimate.vy
+stateEstimate.vz

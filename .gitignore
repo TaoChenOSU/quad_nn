@@ -1,0 +1,12 @@
+ros_ws/build/
+ros_ws/devel/
+.DS_Store
+*.pyc
+*~
+*.mexa64
+# james's symlinks :)
+cfs.yaml
+firm
+client
+launch # ignore launch symlink
+!*ros_ws/*launch* # don't ignore folders with launch in the name

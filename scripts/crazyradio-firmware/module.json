@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "environmentReq": [
+    "sdcc"
+  ],
+  "artifacts": {
+    "file": [
+      {
+        "source": "firmware/bin/cradio.bin",
+        "insertTag": true,
+        "destination": "currDir"
+      }
+    ]
+  }
+}

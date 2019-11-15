@@ -1,0 +1,8 @@
+prefix=/home/artem/crazyswarm-nn/ros_ws/devel
+
+Name: libobjecttracker
+Description: Description of libobjecttracker
+Version: 0.0.1
+Cflags: -I/home/artem/crazyswarm-nn/ros_ws/src/externalDependencies/libobjecttracker/include
+Libs: -L/home/artem/crazyswarm-nn/ros_ws/devel/lib -llibobjecttracker
+Requires: 

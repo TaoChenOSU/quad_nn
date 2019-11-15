@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="joy_dev" default="/dev/input/js0" />
+
+  <rosparam command="load" file="$(find crazyswarm)/launch/crazyflieTypes.yaml" />
+  <rosparam command="load" file="$(find crazyswarm)/launch/crazyflies.yaml" />
+
+  <node pkg="crazyswarm" type="crazyswarm_server" name="crazyswarm_server" output="screen" >
+    <rosparam>
+      firmware: "crazyswarm" # one of "crazyswarm", "bitcraze"
+      broadcast_address: "FFE7E7E7E7"
+      world_frame: "/world"
+      genericLogTopics: ["log1"]
+      genericLogTopicFrequencies: [10]
+      # genericLogTopic_log1_Variables: ["ekfprof.usec_setup", "ekfprof.usec_innov", "ekfprof.usec_gain", "ekfprof.usec_corr", "ekfprof.usec_cov"]
+      # genericLogTopic_log1_Variables: ["profiling.usec_ekf", "profiling.usec_traj", "profiling.usec_ctrl", "profiling.usec_idle"]
+      # genericLogTopic_log1_Variables: ["stabilizer.x", "ctrltarget.x", "vicon.x", "stabilizer.z", "ctrltarget.z", "vicon.z"]
+      # genericLogTopic_log1_Variables: ["stateEstimate.roll", "ctrlMel.rolld"]
+      # genericLogTopic_log1_Variables: ["ctrlStat.edist"]
+      # genericLogTopic_log1_Variables: ["stateEstimate.y", "ctrltarget.y", "ctrlNN.in1"]
+      # genericLogTopic_log1_Variables: ["ctrlNN.in15", "ctrlNN.in16", "ctrlNN.in17", "ctrlNN.out0"]
+      # genericLogTopic_log1_Variables: ["motor.m1", "motor.m2", "motor.m3", "motor.m4"]
+      genericLogTopic_log1_Variables: ["ctrltarget.x", "ctrltarget.y", "ctrltarget.z", "stateEstimate.x", "stateEstimate.y", "stateEstimate.z"]
+      # genericLogTopic_log1_Variables: ["chlDbg.numCmdsRcvd", "chlDbg.state", "chlDbg.sz"]
+      # "ctrlNN.out0","control.directThrust", "control.ratio0"]
+      # genericLogTopic_log1_Variables: ["motor.m1", "motor.m2", "motor.m3", "motor.m4"]
+      firmwareParams: # for all (independent of type)
+        commander:
+          enHighLevel: 1
+        ctrlNN:
+          max_thrust: 1 #0.8 # 1.0 # 0.7
+          rel_vel: 1
+          rel_omega: 1
+          rel_xyz: 0
+          freq: 500
+        stabilizer:
+          estimator: 3 # 1: complementary, 2: kalman, 3: kalmanUSC (only crazyswarm firmware)
+          controller: 3 # 1: PID, 2: mellinger, 3: NN
+        ring:
+          effect: 14 # 6: double spinner, 7: solid color, 14: packetRate
+          solidBlue: 255 # if set to solid color
+          solidGreen: 0 # if set to solid color
+          solidRed: 0 # if set to solid color
+          headlightEnable: 0
+        ekf:
+        #  ext_var_xy: 1.5e-7 # 1e-7 # 1.5e-7
+        #  ext_var_vel: 2e-4 # 2e-4
+        #  ext_var_q: 4.5e-3 # 2e-3 # 4.5e-3
+        #  gyro_var_xy: 0.2e-2 # 0.2e-4
+        #  gyro_var_z: 0.2e-2 # 0.2e-4
+           acc_var_xyz: 2.4e-1
+        #  acc_var_xy: 2.4e-10 # 2.4e-3
+        #  acc_var_z: 2.4e-10
+      # tracking
+      motion_capture_type: "vicon" # one of vicon,optitrack
+      object_tracking_type: "motionCapture" # one of motionCapture,libobjecttracker
+      vicon_host_name: "vicon"
+      # optitrack_local_ip: "localhost"
+      # optitrack_server_ip: "optitrack"
+      save_point_clouds: ~/pointCloud.ot
+      print_latency: False
+      write_csvs: False
+      force_no_cache: False
+      enable_parameters: True
+      enable_logging: True
+      broadcasting_num_repeats: 50 # 15
+      broadcasting_delay_between_repeats_ms: 1 # 1
+    </rosparam>
+  </node>
+
+  <node name="joy" pkg="joy" type="joy_node" output="screen">
+    <param name="dev" value="$(arg joy_dev)" />
+  </node>
+
+<!--   <node pkg="crazyswarm" type="crazyswarm_teleop" name="crazyswarm_teleop" output="screen">
+    <param name="csv_file" value="$(find crazyswarm)/launch/figure8_smooth.csv" />
+    <param name="timescale" value="0.8" />
+  </node> -->
+
+  <node pkg="crazyswarm" type="teleop.py" name="teleop" output="screen"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyswarm)/launch/test.rviz"/>
+
+  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_roll" args="/cf2/log1/values[0] /cf2/log1/values[1] /cf2/log1/values[2] /cf2/log1/values[3]"/> -->
+  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_roll2" args="/cf2/log1/values[3] /cf2/log1/values[4] /cf2/log1/values[5]"/> -->
+  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_pitch" args="/cf45/log1/values[3] /cf45/log1/values[4] /cf45/log1/values[5]"/> -->
+
+</launch>

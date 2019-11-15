@@ -1,0 +1,16 @@
+matrix:
+    include:
+        - os: linux
+          sudo: required
+          services: docker
+          script: docker run --rm -v ${PWD}:/module bitcraze/builder ./tools/build/build 
+        - os: linux
+          language: python
+          env: TOXENV=py27,py34
+          install: pip install tox
+          script: tox
+        - os: osx
+          sudo: required
+          install: pip install tox
+          env: TOXENV=py27
+          script: tox

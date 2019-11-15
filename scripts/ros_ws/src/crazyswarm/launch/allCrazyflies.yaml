@@ -1,0 +1,17 @@
+crazyflies:
+  - id: 2
+    channel: 80
+    initialPosition: [0.0, 0.0, 0.0]
+    type: medium #one of: medium, mediumNoIGain, mediumAverageGains
+  - id: 7
+    channel: 80
+    initialPosition: [-2.0, 0.0, 0.0]
+    type: smallAverageGains # one of: small, smallNoIGain, smallAverageGains
+  - id: 33
+    channel: 120
+    initialPosition: [1.0, 0.0, 0.0]
+    type: default ##defaultAverageGains
+  - id: 1
+    channel: 80
+    initialPosition: [-1.0, 0.0, 0.0]
+    type: largeNoIGain # one of large, largeNoIGain, largeAverageGains
