@@ -1,8 +1,0 @@
-prefix=/home/artem/crazyswarm-nn/ros_ws/install
-
-Name: crazyswarm
-Description: Description of crazyswarm
-Version: 0.0.3
-Cflags: 
-Libs: -L/home/artem/crazyswarm-nn/ros_ws/install/lib 
-Requires: message_runtime std_msgs tf crazyflie_cpp crazyflie_driver

@@ -1,8 +1,0 @@
-prefix=/home/artem/crazyswarm-nn/ros_ws/devel
-
-Name: crazyflie_cpp
-Description: Description of crazyflie_cpp
-Version: 0.0.1
-Cflags: -I/home/artem/crazyswarm-nn/ros_ws/src/crazyflie_ros/crazyflie_cpp/include
-Libs: -L/home/artem/crazyswarm-nn/ros_ws/devel/lib -lcrazyflie_cpp
-Requires: 

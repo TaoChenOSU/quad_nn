@@ -1,8 +1,0 @@
-prefix=/home/artem/crazyswarm-nn/ros_ws/install
-
-Name: libmotioncapture
-Description: Description of libmotioncapture
-Version: 0.0.1
-Cflags: -I/home/artem/crazyswarm-nn/ros_ws/install/include
-Libs: -L/home/artem/crazyswarm-nn/ros_ws/install/lib -llibmotioncapture
-Requires: 

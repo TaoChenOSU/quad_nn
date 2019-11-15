@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11 -O2 -g -DNDEBUG   CMakeFiles/listMemories.dir/src/listMemories.cpp.o  -o /home/artem/crazyswarm-nn/ros_ws/devel/lib/crazyflie_tools/listMemories -rdynamic /home/artem/crazyswarm-nn/ros_ws/devel/lib/libcrazyflie_cpp.so -lboost_program_options -lusb-1.0 -Wl,-rpath,/home/artem/crazyswarm-nn/ros_ws/devel/lib 
