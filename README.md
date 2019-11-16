@@ -3,4 +3,4 @@
 - Paper Link: [ArXiv](https://arxiv.org/abs/1903.04628)
 - Project site: [Google Site](https://sites.google.com/view/sim-to-multi-quad)
 
-This is a slightly modified version of the Crazyswarm framework to work with neural network control policies. The original documneation is still valid: http://crazyswarm.readthedocs.io/en/latest/.
+This is a slightly modified version of the Crazyswarm framework to work with neural network control policies. The original documentation is still valid: http://crazyswarm.readthedocs.io/en/latest/.
