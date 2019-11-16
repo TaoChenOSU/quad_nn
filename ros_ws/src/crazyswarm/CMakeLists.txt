@@ -129,7 +129,7 @@ include_directories(
   ${PCL_INCLUDE_DIRS}
   ../externalDependencies/libobjecttracker/include
   ## TODO remove this dependency
-  ../../../crazyflie-firmware/src/modules/interface/
+  ../../../quad_nn_firmware/src/modules/interface/
 )
 
 link_directories(
